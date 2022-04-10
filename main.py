@@ -1,2 +1,3 @@
-# This is a sample Python script.
+from user_interface import enter_data
 
+enter_data()

@@ -1,9 +1,10 @@
-import read_contact
+from read_contact import read_contact
+
 
 def enter_data():
-
     print('Выберите необходимую операцию:', '1 - ввод данных в формате "Фамилия, Имя, телефон, описание',
-          '2 - вывод данных в требуемом формате', '3 - экспорт данных в файл','4 - завершение работы с модулем', sep= '\n' )
+          '2 - вывод данных в требуемом формате', '3 - экспорт данных в файл', '4 - завершение работы с модулем',
+          sep='\n')
 
     operation_select = int(input())
     if operation_select == 1:
@@ -18,6 +19,4 @@ def enter_data():
         read_contact()
 
 
-
-
-print(enter_data())
+# print(enter_data())
