@@ -1,6 +1,7 @@
 from read_contact import read_contact
 from save_contacts import save_to_csv
 
+
 def enter_data():
     print('Выберите необходимую операцию:', '1 - ввод данных в формате "Фамилия, Имя, телефон, описание"',
           '2 - вывод данных в требуемом формате', '3 - экспорт данных в файл', '4 - завершение работы с модулем',
@@ -31,4 +32,4 @@ def enter_data():
         print('Неверный ввод!!! Повторите!!!')
         enter_data()
 
-print(enter_data())
+# print(enter_data())
