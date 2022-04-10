@@ -13,10 +13,9 @@ def enter_data():
         phone_number = input('Введите номер телефона: ')
         description = input('Введите описание: ')
         new_list = [soname, name, phone_number, description]
-        return (new_list)
+        return new_list
     elif operation_select == 2:
         print('Выберите формат отображения данных:', '1 - построчно', '2 - в одну строку', sep='\n')
         read_contact()
-
 
 # print(enter_data())
