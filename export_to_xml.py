@@ -1,44 +1,39 @@
-import pandas as pd
-import xml.etree.ElementTree as ET
+# import pandas as pd
+# import xml.etree.ElementTree as ET
 import csv
 
 
-def to_xml(file_name='contacts.csv'):
+def csv_to_data(file_name='contacts.csv'):
     with open(file_name, newline='') as f:
         csv_f = csv.reader(f, delimiter=';')
         data = []
         for row in csv_f:
-            row.pop(len(row) - 1)
             data.append(row)
-    return data[0:]
+    return data
 
 
-def convert_row(data):
+def export_to_xml(data=csv_to_data()):
+    xml = '<xml>\n'
     for row in data:
-        # fam, name, phone, info = row
-        xml = '<xml>\n'
-        xml += '    <Last_name units = "%s">{}</Last_name>\n' \
+        xml += '    <Last_name>{}</Last_name>\n' \
             .format(row[0])
-        xml += '    <Name units = "%s">{}</Name>\n' \
+        xml += '    <Name>{}</Name>\n' \
             .format(row[1])
-        xml += '    <Phone_number units = "%s">{}</Phone_number>\n' \
+        xml += '    <Phone_number>{}</Phone_number>\n' \
             .format(row[2])
-        xml += '    <Info units = "%s">{}</Info>\n' \
+        xml += '    <Info>{}</Info>\n' \
             .format(row[3])
-        xml += '</xml>'
-        with open('data.xml', 'w') as page:
-            page.write(xml)
-    return """<Фамилия="%s">
-    <Имя>%s</Имя>
-    <Номер телефона>%s</Номер телефона>
-    <Описание>%s</Описание>
-    </Фамилия>""" % (row[0], row[1], row[2], row[3])
+    xml += '</xml>'
+    with open('contacts.xml', 'w') as page:
+        page.write(xml)
+    return data
 
+# contacts = csv_to_data()
+# print(contacts)
+# export_to_xml(contacts)
 
-data = to_xml()
-convert_row(data)
 # data = ET.Element('data')
-print('\n'.join([convert_row(row) for row in data[1:]]))
+# print('\n'.join([export_to_xml(row) for row in data[1:]]))
 
 # <?xml version="1.0"?>
 # <Company>

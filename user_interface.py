@@ -1,5 +1,6 @@
 from read_contact import read_contact
 from save_contacts import save_to_csv
+from export_to_xml import export_to_xml
 
 
 def enter_data():
@@ -24,12 +25,14 @@ def enter_data():
             read_contact(num)
         enter_data()
     elif operation_select == 3:
-        print('Сделаем потом!!!')
+        export_to_xml()
+        print('Данные экспортированы в формате xml!\n' + '-' * 20)
+        enter_data()
     elif operation_select == 4:
-        print('До новых встреч!!!')
+        print('До новых встреч!!!\n' + '-' * 20)
         exit(0)
     else:
-        print('Неверный ввод!!! Повторите!!!')
+        print('Неверный ввод!!! Повторите!!!\n' + '-' * 20)
         enter_data()
 
 # print(enter_data())
