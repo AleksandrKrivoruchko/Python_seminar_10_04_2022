@@ -27,7 +27,6 @@ def export_to_xml(data=csv_to_data()):
             .format(row[3])
         xml += '    </contact>\n'
     xml += '</contacts>'
-
     with open('contacts.xml', 'w') as page:
         page.write(xml)
     return data
