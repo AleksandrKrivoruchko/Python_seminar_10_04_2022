@@ -13,17 +13,21 @@ def csv_to_data(file_name='contacts.csv'):
 
 
 def export_to_xml(data=csv_to_data()):
-    xml = '<xml>\n'
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<contacts>\n'
     for row in data:
-        xml += '    <Last_name>{}</Last_name>\n' \
+        xml += '    <contact>\n'
+        xml += '        <Last_name>{}</Last_name>\n' \
             .format(row[0])
-        xml += '    <Name>{}</Name>\n' \
+        xml += '        <Name>{}</Name>\n' \
             .format(row[1])
-        xml += '    <Phone_number>{}</Phone_number>\n' \
+        xml += '        <Phone_number>{}</Phone_number>\n' \
             .format(row[2])
-        xml += '    <Info>{}</Info>\n' \
+        xml += '        <Info>{}</Info>\n' \
             .format(row[3])
-    xml += '</xml>'
+        xml += '    </contact>\n'
+    xml += '</contacts>'
+
     with open('contacts.xml', 'w') as page:
         page.write(xml)
     return data
