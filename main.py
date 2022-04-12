@@ -1,3 +1,3 @@
-from user_interface import enter_data
+from user_interface import start
 
-enter_data()
+start()

@@ -1,0 +1,1 @@
+"[\n    {\n        \"Last_name\": Ivanov,\n        \"Name\": Ivan,\n        \"Phone_number\": 12345,\n        \"Info\": worker,\n    },\n    {\n        \"Last_name\": Petrov,\n        \"Name\": Petr,\n        \"Phone_number\": 54321,\n        \"Info\": homeless,\n    },\n]"

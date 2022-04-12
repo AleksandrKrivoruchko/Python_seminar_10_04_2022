@@ -6,5 +6,3 @@ def save_to_csv(contact_info):
             else:
                 bd.write(f'{contact_info[i]}')
         bd.write('\n')
-
-# save_to_csv(['Глухов', 'Павел', '+7 913 927 5379', 'Ученик в GB'])

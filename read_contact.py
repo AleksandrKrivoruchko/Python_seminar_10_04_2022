@@ -13,5 +13,3 @@ def read_contact(unit=1, file_name='contacts.csv'):
                     print(item)
                 print()
         print('End of contacts\n' + '-' * 20)
-
-# read_contact()
